@@ -24,5 +24,11 @@ namespace BashShop.APages
         {
             InitializeComponent();
         }
+
+        private void AddProdBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AddProdWindow apw = new AddProdWindow();
+            apw.Show();
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BashShop.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,12 @@ namespace BashShop.Pages
         public CatalogPage()
         {
             InitializeComponent();
+        }
+
+        private void listprod_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var lstp = listprod.SelectedItem as Products;
+            this.NavigationService.Navigate(new OrderPage(lstp));
         }
     }
 }

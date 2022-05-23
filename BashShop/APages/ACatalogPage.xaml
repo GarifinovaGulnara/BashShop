@@ -52,6 +52,6 @@
             </ListView.ItemTemplate>
         </ListView>
         <ComboBox HorizontalAlignment="Left" Margin="455,50,0,0" VerticalAlignment="Top" Width="148" Height="36"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="475,407,0,0" VerticalAlignment="Top"/>
+        <Button Style="{DynamicResource ButtonStyle}" x:Name="AddProdBtn" Height="35" Content="Добавить товар" Background="#BEA36E" HorizontalAlignment="Left" Margin="480,375,0,0" VerticalAlignment="Top" Width="117" Click="AddProdBtn_Click" />
     </Grid>
 </Page>

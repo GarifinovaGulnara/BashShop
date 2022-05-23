@@ -11,7 +11,7 @@
             <ColumnDefinition Width="149*"/>
             <ColumnDefinition Width="651*"/>
         </Grid.ColumnDefinitions>
-        <Frame x:Name="MainFrame" Source="/Pages/CatalogPage.xaml" NavigationUIVisibility="Hidden" Grid.Column="1"/>
+        <Frame x:Name="MainFrame" Source="/Pages/AboutUsPage.xaml" NavigationUIVisibility="Hidden" Grid.Column="1"/>
         <Rectangle Fill="#CBB790" HorizontalAlignment="Center" Height="534" Stroke="Black" VerticalAlignment="Center" Width="150"/>
         <Rectangle Fill="#BEA36E" HorizontalAlignment="Center" Height="60" Stroke="Black" VerticalAlignment="Top" Width="150"/>
         <Button x:Name="About_UsBtn" Style="{DynamicResource ButtonStyle}" Content="О нас" Background="#BEA36E" HorizontalAlignment="Center" Margin="0,250,0,0" VerticalAlignment="Top" Height="30" Width="110" Click="About_Us_Click" />

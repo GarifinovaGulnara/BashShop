@@ -10,7 +10,7 @@
 
     <Grid Background="White">
         <ListView 
-                 Name="listprod" Margin="0,10,0,0" 
+                 Name="listprod" Margin="0,10,0,0" SelectionChanged="listprod_SelectionChanged"
                 Background="#F4E8D0" BorderBrush="Transparent" 
                 HorizontalContentAlignment="Center" Width="400"
                 HorizontalAlignment="Left">

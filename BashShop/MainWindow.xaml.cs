@@ -32,7 +32,7 @@ namespace BashShop
 
         private void HomePage_Click(object sender, RoutedEventArgs e)
         {
-            if (IsAdmin ==true)
+            if (App.user.IsAdmin == true)
             {
                 MainFrame.Navigate(new AHomePage());
             }
@@ -42,7 +42,7 @@ namespace BashShop
 
         private void Catalog_Click(object sender, RoutedEventArgs e)
         {
-            if (IsAdmin == true)
+            if (App.user.IsAdmin == true)
             {
                 MainFrame.Navigate(new ACatalogPage());
             }

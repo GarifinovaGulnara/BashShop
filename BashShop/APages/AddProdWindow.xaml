@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BashShop.APages"
         mc:Ignorable="d"
-        Title="AddProdWindow" Height="450" Width="800">
+        Title="AddProdWindow" Height="350" Width="550">
     <Grid>
-        
+        <TextBox x:Name="NameProd" Background="#F4E8D0" HorizontalAlignment="Left" Margin="59,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143" Height="38"/>
+        <Label Content="Название" FontWeight="Bold" HorizontalAlignment="Left" Margin="58,30,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="DesProd" Background="#F4E8D0" HorizontalAlignment="Left" Margin="302,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" Height="121"/>
+        <Label Content="Описание" FontWeight="Bold" HorizontalAlignment="Left" Margin="301,30,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="PriceProd" Background="#F4E8D0" HorizontalAlignment="Left" Margin="60,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143" Height="38"/>
+        <Label Content="Цена" FontWeight="Bold" HorizontalAlignment="Left" Margin="59,107,0,0" VerticalAlignment="Top"/>
+        <Button Style="{DynamicResource ButtonStyle}" x:Name="AddProdBtn" Height="35" Content="Добавить товар" Background="#BEA36E" HorizontalAlignment="Center" Margin="0,250,0,0" VerticalAlignment="Top" Width="118" Click="AddProdBtn_Click" />
     </Grid>
 </Window>
