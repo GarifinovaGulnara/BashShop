@@ -13,7 +13,7 @@ namespace BashShop.Data
     {
         [BsonId]
         [BsonIgnoreIfDefault]
-        public ObjectId id { get; set; }
+        public ObjectId Id { get; set; }
         [BsonElement]
         public string Name { get; set; }
 
@@ -35,6 +35,14 @@ namespace BashShop.Data
             var db = client.GetDatabase("BashShop");
             var collection = db.GetCollection<Products>("prods");
             await collection.InsertOneAsync(prod);
+        }
+        
+        public async static Task<List<Products>> GetProd()
+        {
+            MongoClient client = new MongoClient();
+            var db = client.GetDatabase("BashShop");
+            var collection = db.GetCollection<Products>("prods");
+            return collection.Find(x => true).ToList();
         }
     }
 }

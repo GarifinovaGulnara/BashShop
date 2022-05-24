@@ -12,6 +12,10 @@
         <TextBox x:Name="NameProd" Text="{}" Background="#F4E8D0" IsEnabled="False" HorizontalAlignment="Left" Margin="85,50,0,0" VerticalAlignment="Top" Width="240" Height="40"/>
         <TextBox x:Name="DesProd" Text="{}" Background="#F4E8D0" IsEnabled="False" HorizontalAlignment="Left" Margin="370,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" Height="129"/>
         <TextBox x:Name="PriceProd" Text="{} за шт." Background="#F4E8D0" IsEnabled="False" HorizontalAlignment="Left" Margin="85,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" Height="38"/>
-        <Button Style="{DynamicResource ButtonStyle}" x:Name="AddOrderBtn" Height="35" Content="Добавить заказ" Background="#BEA36E" HorizontalAlignment="Center" VerticalAlignment="Center" Width="118" Click="AddOrderBtn_Click"/>
+        <Button Style="{DynamicResource ButtonStyle}" x:Name="AddOrderBtn" Height="34" Content="Добавить заказ" Background="#BEA36E" HorizontalAlignment="Center" VerticalAlignment="Top" Width="118" Click="AddOrderBtn_Click" Margin="0,290,0,0"/>
+        <Button Style="{DynamicResource ButtonStyle}" x:Name="MinusBtn" BorderBrush="White" Content="-" FontSize="24" Background="#BEA36E" HorizontalAlignment="Left" Margin="54,210,0,0" VerticalAlignment="Top" Height="34" Width="35" Click="MinusBtn_Click"/>
+        <Button Style="{DynamicResource ButtonStyle}" x:Name="PlusBtn" BorderBrush="White" Content="+" FontSize="24" Background="#BEA36E" HorizontalAlignment="Left" Margin="239,210,0,0" VerticalAlignment="Top" Height="35" Width="35" Click="PlusBtn_Click"/>
+        <TextBlock x:Name="CountProd" HorizontalAlignment="Left" IsEnabled="False" Background="#F4E8D0" Margin="118,210,0,0" Text="1" FontWeight="Bold" FontSize="18" TextWrapping="Wrap" Height="35" TextAlignment="Center" VerticalAlignment="Top" Width="87"/>
+        <TextBox x:Name="PriceProds" Text="" Background="#F4E8D0" IsEnabled="False" HorizontalAlignment="Left" Margin="370,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" Height="38"/>
     </Grid>
 </Page>

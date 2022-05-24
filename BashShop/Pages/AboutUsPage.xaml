@@ -13,6 +13,15 @@
         <TextBox IsEnabled="False" Text="У нас вы найдете самогонные аппараты, пивоварни, комплектующие и ингредиенты — все необходимое для приготовления вкусных натуральных продуктов и напитков. На прилавки поступают только качественные товары.
 
 Главное, чего мы хотим добиться — показать людям, что приготовление домашних напитков является увлекательным хобби. Если вы хотите пить вкусные напитки без примесей и употреблять в пищу натуральные продукты без консервантов и усилителей, присоединяйтесь к нам! С нами это легче, чем кажется!" Background="#F4E8D0" Padding="10" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="305,15,0,0" VerticalAlignment="Top" Height="225" Width="311"/>
+        <ListView Height="150" Margin="0,275,0,75">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBox HorizontalAlignment="Left" Margin="27,465,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="433" Height="70"/>
+        <Button Style="{DynamicResource ButtonStyle}" Content="Отправить отзыв" HorizontalAlignment="Left" Margin="505,482,0,0" VerticalAlignment="Top" Height="36" Width="111"/>
 
     </Grid>
 </Page>

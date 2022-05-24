@@ -24,8 +24,13 @@ namespace BashShop.Pages
         public CatalogPage()
         {
             InitializeComponent();
+            GetInfoProdAsync();
         }
 
+        public async Task GetInfoProdAsync()
+        {
+            listprod.ItemsSource = await Products.GetProd();
+        }
         private void listprod_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var lstp = listprod.SelectedItem as Products;

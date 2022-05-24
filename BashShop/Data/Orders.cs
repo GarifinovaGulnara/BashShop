@@ -17,18 +17,19 @@ namespace BashShop.Data
         [BsonElement]
         public string NameProd { get; set; }
         [BsonElement]
-        public double PriceProd { get; set; }
-        //[BsonElement]
-        //public int Count { get; set; }
+        public double PriceProds { get; set; }
+        [BsonElement]
+        public int Count { get; set; }
         [BsonElement]
         public string NameUser { get; set; }
         [BsonElement]
         public string PhoneUser { get; set; }
 
-        public Orders(string name, double price, string nameus, string phoneus)
+        public Orders(string name, double price, int count, string nameus, string phoneus)
         {
             NameProd = name;
-            PriceProd = price;
+            PriceProds = price;
+            Count = count;
             NameUser = nameus;
             PhoneUser = phoneus;
         }
@@ -39,5 +40,15 @@ namespace BashShop.Data
             var collection = db.GetCollection<Orders>("orders");
             await collection.InsertOneAsync(or);
         }
+
+        public static List<Orders> GetInfoOrder()
+        {
+            MongoClient client = new MongoClient();
+            var db = client.GetDatabase("BashShop");
+            var collection = db.GetCollection<Orders>("orders");
+            return collection.Find(x => x.PhoneUser == App.user.Phone).ToList();
+        }
+
+
     }
 }

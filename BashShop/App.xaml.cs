@@ -15,5 +15,6 @@ namespace BashShop
     public partial class App : Application
     {
         public static Users user;
+        public static Products products;
     }
 }

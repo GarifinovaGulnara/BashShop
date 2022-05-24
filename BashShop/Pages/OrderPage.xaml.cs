@@ -21,21 +21,53 @@ namespace BashShop.Pages
     /// </summary>
     public partial class OrderPage : Page
     {
-        Orders order;
-        public OrderPage(Orders or)
+        Products order;
+        public OrderPage(Products or)
         {
             InitializeComponent();
             order = or;
-            NameProd.Text = or.NameProd;
-            PriceProd.Text = or.PriceProd.ToString();
+            NameProd.Text = or.Name;
+            PriceProd.Text = or.Price.ToString();
+            PriceProds.Text = or.Price.ToString();
         }
 
         private void AddOrderBtn_Click(object sender, RoutedEventArgs e)
         {
-            Orders or = new Orders(NameProd.Text, Convert.ToDouble(PriceProd.Text), App.user.Name, App.user.Phone);
+            Orders or = new Orders(NameProd.Text, Convert.ToDouble(PriceProds.Text), Convert.ToInt32(CountProd.Text), App.user.Name, App.user.Phone);
             Orders.AddOrder(or);
             MessageBox.Show("Заказ отправлен");
 
+        }
+
+        private void MinusBtn_Click(object sender, RoutedEventArgs e)
+        {
+            int count = Convert.ToInt32(CountProd.Text);
+            if (count == 1)
+            {
+                CountProd.Text = "1";
+            }
+            else
+            {
+                count--;
+                CountProd.Text = count.ToString();
+                PriceProds.Text = (count * order.Price).ToString();
+            }
+        }
+
+        private void PlusBtn_Click(object sender, RoutedEventArgs e)
+        {
+            int count = Convert.ToInt32(CountProd.Text);
+            double pr = Convert.ToDouble(PriceProd.Text);
+            if (count >= 50)
+            {
+                CountProd.Text = "50";
+            }
+            else
+            {
+                count++;
+                CountProd.Text = count.ToString();
+                PriceProds.Text = (count * pr).ToString();
+            }
         }
     }
 }

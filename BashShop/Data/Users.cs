@@ -13,7 +13,7 @@ namespace BashShop.Data
     {
         [BsonId]
         [BsonIgnoreIfDefault]
-        public ObjectId id { get; set; }
+        public ObjectId Id { get; set; }
         [BsonElement]
         public string Name { get; set; }
 
@@ -29,8 +29,7 @@ namespace BashShop.Data
         public string Pass { get; set; }
         [BsonElement]
         public bool IsAdmin { get; set; }
-
-        public Users(string name, string surname, string patronic, string datebirth, string phone, string pass, bool isadmin)
+        public Users(string name, string surname, string patronic, string datebirth, string phone, string pass, bool isadmin = false)
         {
             Name = name;
             Surname = surname;
@@ -53,6 +52,7 @@ namespace BashShop.Data
             var db = client.GetDatabase("BashShop");
             var collection = db.GetCollection<Users>("users");
             await collection.InsertOneAsync(user);
+
         }
 
         public static bool LogInUser(Users user)
@@ -65,6 +65,25 @@ namespace BashShop.Data
             if (App.user == null)
                 return false;
             return true;
+        }
+
+        public static void EditProfile()
+        {
+            MongoClient client = new MongoClient(); // чтобы подключится к серверу надо передать в качестве аргумента {uri}
+            var db = client.GetDatabase("BashShop");
+            var data = db.GetCollection<Users>("users");
+            var UpdateDef = Builders<Users>.Update.Set("Name", App.user.Name).Set("Surname", App.user.Surname).Set("Patronic", App.user.Patronic).Set("Phone", App.user.Phone).Set("Pass", App.user.Pass);
+            data.UpdateOne(basa => basa.Id == App.user.Id, UpdateDef);
+            //IGridFSBucket gridFS = new GridFSBucket(db);
+
+            //try
+            //{
+            //    using (Stream fs = new FileStream(new_link, FileMode.Open))
+            //    {
+            //        await gridFS.UploadFromStreamAsync(textbox3.Text, fs, new GridFSUploadOptions { Metadata = new BsonDocument("filename", textbox3.Text) });
+            //    }
+            //}
+            //catch { }
         }
     }
 }

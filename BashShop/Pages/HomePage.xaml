@@ -11,13 +11,16 @@
     <Grid Background="White">
         <Image HorizontalAlignment="Left" Height="151" Margin="65,30,0,0" VerticalAlignment="Top" Width="174" Source="/img/profil.png"/>
         <TextBox x:Name="FIOTB" Background="#F4E8D0" IsEnabled="False" HorizontalAlignment="Left" Margin="275,53,0,0" VerticalAlignment="Top" Width="170" Height="40"/>
-        <TextBox x:Name="DateBirhtTB" Background="#F4E8D0" IsEnabled="False" HorizontalAlignment="Left" Margin="275,106,0,0" VerticalAlignment="Top" Width="150"/>
-        <TextBox x:Name="PassLB" Background="#F4E8D0" IsEnabled="False" HorizontalAlignment="Left" Margin="275,140,0,0" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="PhoneLB" Text="{Binding Phone}" Background="#F4E8D0" IsEnabled="False" HorizontalAlignment="Left" Margin="275,106,0,0" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="PassLB" Text="{Binding Pass}" Background="#F4E8D0" IsEnabled="False" HorizontalAlignment="Left" Margin="275,140,0,0" VerticalAlignment="Top" Width="150"/>
         <Button x:Name="UpdateProfilBtn" Style="{DynamicResource ButtonStyle}" Background="#BEA36E" Content="Редактировать профиль" Padding="10" HorizontalAlignment="Left" Margin="75,206,0,0" VerticalAlignment="Top" Click="UpdateProfilBtn_Click"/>
-        <ListView Width="300" Height="250" Margin="275,275,75,25">
+        <ListView x:Name="UsersLV" Width="300" Height="250" Margin="275,275,75,25">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn/>
+                    <GridViewColumn DisplayMemberBinding="{Binding NameProd}" Header="Название"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Description}" Header="Описание"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Count}" Header="Кол-во"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding PriceProds}" Header="Цена"/>
                 </GridView>
             </ListView.View>
         </ListView>

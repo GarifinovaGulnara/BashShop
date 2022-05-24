@@ -5,10 +5,18 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:BashShop.APages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="550" d:DesignWidth="650"
       Title="AHomePage">
 
-    <Grid>
-        
+    <Grid Background="White">
+        <ListView Margin="32,100,32,100">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="Заказы" FontSize="18" HorizontalAlignment="Center" Margin="0,56,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Page>

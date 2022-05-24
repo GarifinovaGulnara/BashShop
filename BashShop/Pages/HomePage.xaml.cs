@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BashShop.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,12 +25,14 @@ namespace BashShop.Pages
         {
             InitializeComponent();
             SaveUpdateBtn.Visibility = Visibility.Hidden;
+            FIOTB.Text = App.user.Surname + " " + App.user.Name + " " + App.user.Patronic;
+            DataContext = App.user;
         }
 
         private void UpdateProfilBtn_Click(object sender, RoutedEventArgs e)
         {
             FIOTB.IsEnabled = true;
-            DateBirhtTB.IsEnabled = true;
+            PhoneLB.IsEnabled = true;
             PassLB.IsEnabled = true;
             SaveUpdateBtn.Visibility = Visibility.Visible;
         }
@@ -37,9 +40,15 @@ namespace BashShop.Pages
         private void SaveUpdateBtn_Click(object sender, RoutedEventArgs e)
         {
             FIOTB.IsEnabled = false;
-            DateBirhtTB.IsEnabled = false;
+            PhoneLB.IsEnabled = false;
             PassLB.IsEnabled = false;
             SaveUpdateBtn.Visibility = Visibility.Hidden;
+            string[] fio = FIOTB.Text.Split(' ');
+            App.user.Surname = fio[0];
+            App.user.Name = fio[1];
+            App.user.Patronic = fio[2];
+            Users.EditProfile();
+
         }
     }
 }
