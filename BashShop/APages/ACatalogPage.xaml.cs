@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BashShop.Data;
+using BashShop.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,12 +25,25 @@ namespace BashShop.APages
         public ACatalogPage()
         {
             InitializeComponent();
+            GetInfoProdAsync();
+        }
+
+        public async Task GetInfoProdAsync()
+        {
+            listprod.ItemsSource = await Products.GetProd();
         }
 
         private void AddProdBtn_Click(object sender, RoutedEventArgs e)
         {
             AddProdWindow apw = new AddProdWindow();
             apw.Show();
+        }
+
+        private void listprod_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var lstp = listprod.SelectedItem as Products;
+            DialogDelOrEditWindow ddoew = new DialogDelOrEditWindow(lstp);
+            ddoew.Show();
         }
     }
 }

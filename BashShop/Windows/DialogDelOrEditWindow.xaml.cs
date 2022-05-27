@@ -11,24 +11,25 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace BashShop.APages
+namespace BashShop.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для AHomePage.xaml
+    /// Логика взаимодействия для DialogDelOrEditWindow.xaml
     /// </summary>
-    public partial class AHomePage : Page
+    public partial class DialogDelOrEditWindow : Window
     {
-        public AHomePage()
+        public Products products;
+        public DialogDelOrEditWindow(Products prod)
         {
             InitializeComponent();
-            GetInfoAllOrderAsynk();
+            products = prod;
         }
-        public async Task GetInfoAllOrderAsynk()
+
+        private void DeleteProd_Click(object sender, RoutedEventArgs e)
         {
-            AllOrdersLV.ItemsSource = await Orders.GetInfoAllOrders();
+
         }
     }
 }

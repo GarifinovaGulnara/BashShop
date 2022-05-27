@@ -13,15 +13,37 @@
         <TextBox IsEnabled="False" Text="У нас вы найдете самогонные аппараты, пивоварни, комплектующие и ингредиенты — все необходимое для приготовления вкусных натуральных продуктов и напитков. На прилавки поступают только качественные товары.
 
 Главное, чего мы хотим добиться — показать людям, что приготовление домашних напитков является увлекательным хобби. Если вы хотите пить вкусные напитки без примесей и употреблять в пищу натуральные продукты без консервантов и усилителей, присоединяйтесь к нам! С нами это легче, чем кажется!" Background="#F4E8D0" Padding="10" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="305,15,0,0" VerticalAlignment="Top" Height="225" Width="311"/>
-        <ListView Height="150" Margin="0,275,0,75">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
+        <ListView x:Name="ReviewsLV" Height="150" Margin="0,260,0,140">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border Background="White" CornerRadius="10" Margin="10,0,0,10">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="30" Color="LightGray" />
+                        </Border.Effect>
+                        <Canvas Height="50" Width="350" HorizontalAlignment="Center">
+                            <TextBlock 
+                                Text="{Binding NameUs}" 
+                                FontWeight="Bold" 
+                                FontSize="18" 
+                                Margin="5"
+                                Width="300"
+                                TextAlignment="Left" 
+                                Background="Transparent"/>
+                            <TextBlock 
+                                Text="{Binding Review}" 
+                                FontSize="10" 
+                                Margin="10,30"
+                                Width="300"
+                                TextAlignment="Left" 
+                                TextWrapping="Wrap"
+                                Background="Transparent"/>
+                        </Canvas>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
-        <TextBox HorizontalAlignment="Left" Margin="27,465,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="433" Height="70"/>
-        <Button Style="{DynamicResource ButtonStyle}" Content="Отправить отзыв" HorizontalAlignment="Left" Margin="505,482,0,0" VerticalAlignment="Top" Height="36" Width="111"/>
+        <TextBox x:Name="DesRev" HorizontalAlignment="Left" Margin="27,425,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="433" Height="70"/>
+        <Button x:Name="AddRevBtn" Style="{DynamicResource ButtonStyle}" Background="#BEA36E" Content="Отправить отзыв" HorizontalAlignment="Left" Margin="505,442,0,0" VerticalAlignment="Top" Height="36" Width="111" Click="AddRevBtn_Click"/>
 
     </Grid>
 </Page>

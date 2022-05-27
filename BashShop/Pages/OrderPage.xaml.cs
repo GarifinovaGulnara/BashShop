@@ -27,13 +27,14 @@ namespace BashShop.Pages
             InitializeComponent();
             order = or;
             NameProd.Text = or.Name;
+            DesProd.Text = or.Description;
             PriceProd.Text = or.Price.ToString();
             PriceProds.Text = or.Price.ToString();
         }
 
         private void AddOrderBtn_Click(object sender, RoutedEventArgs e)
         {
-            Orders or = new Orders(NameProd.Text, Convert.ToDouble(PriceProds.Text), Convert.ToInt32(CountProd.Text), App.user.Name, App.user.Phone);
+            Orders or = new Orders(NameProd.Text, Convert.ToDouble(PriceProds.Text), DesProd.Text, Convert.ToInt32(CountProd.Text), App.user.Name, App.user.Phone);
             Orders.AddOrder(or);
             MessageBox.Show("Заказ отправлен");
 

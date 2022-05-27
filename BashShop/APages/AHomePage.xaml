@@ -9,10 +9,15 @@
       Title="AHomePage">
 
     <Grid Background="White">
-        <ListView Margin="32,100,32,100">
+        <ListView x:Name="AllOrdersLV" Margin="32,100,32,100">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn/>
+                    <GridViewColumn DisplayMemberBinding="{Binding NameProd}" Header="Название"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding DesProd}" Header="Описание"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Count}" Header="Кол-во"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding PriceProds}" Header="Цена"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding NameUser}" Header="Имя заказчика"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding PhoneUser}" Header="Телефон"/>
                 </GridView>
             </ListView.View>
         </ListView>

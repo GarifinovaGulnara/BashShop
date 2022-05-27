@@ -1,5 +1,4 @@
-﻿using BashShop.Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,24 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace BashShop.APages
+namespace BashShop.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для AHomePage.xaml
+    /// Логика взаимодействия для DialogDelWindow.xaml
     /// </summary>
-    public partial class AHomePage : Page
+    public partial class DialogDelWindow : Window
     {
-        public AHomePage()
+        public DialogDelWindow()
         {
             InitializeComponent();
-            GetInfoAllOrderAsynk();
-        }
-        public async Task GetInfoAllOrderAsynk()
-        {
-            AllOrdersLV.ItemsSource = await Orders.GetInfoAllOrders();
         }
     }
 }

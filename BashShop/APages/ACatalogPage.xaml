@@ -10,7 +10,7 @@
 
     <Grid Background="White">
         <ListView 
-                 Name="listprod" Margin="0,10,0,0" 
+                 Name="listprod" Margin="0,10,0,0" SelectionChanged="listprod_SelectionChanged"
                 Background="#F4E8D0" BorderBrush="Transparent" 
                 HorizontalContentAlignment="Center" Width="400"
                 HorizontalAlignment="Left">
@@ -18,31 +18,30 @@
                 <DataTemplate>
                     <Border Background="White" CornerRadius="10" Margin="10,0,0,10">
                         <Border.Effect>
-                            <DropShadowEffect BlurRadius="20" />
+                            <DropShadowEffect BlurRadius="30" Color="LightGray" />
                         </Border.Effect>
-                        <Canvas Height="150" Width="350" HorizontalAlignment="Center">
-                            <Image Source="{Binding }" Height="100" Width="100" Margin="350,10"/>
+                        <Canvas Height="100" Width="350" HorizontalAlignment="Center">
                             <TextBlock 
-                                Text="{Binding}" 
+                                Text="{Binding Name}" 
                                 FontWeight="Bold" 
-                                FontSize="35" 
-                                Margin="10,30"
+                                FontSize="24" 
+                                Margin="10"
                                 Width="300"
                                 TextAlignment="Left" 
                                 Background="Transparent"/>
                             <TextBlock 
-                                Text="{Binding}" 
-                                FontSize="15" 
-                                Margin="10,75"
+                                Text="{Binding Description}" 
+                                FontSize="12" 
+                                Margin="10,40"
                                 Width="300"
                                 TextAlignment="Left" 
                                 TextWrapping="Wrap"
                                 Background="Transparent"/>
                             <TextBlock 
-                                Text="{Binding}" 
+                                Text="{Binding Price}" 
                                 FontWeight="Bold" 
-                                FontSize="20" 
-                                Margin="0,110"
+                                FontSize="18" 
+                                Margin="0,70"
                                 Width="300"
                                 TextAlignment="Center" 
                                 Background="Transparent"/>

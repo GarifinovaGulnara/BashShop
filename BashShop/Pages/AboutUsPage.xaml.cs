@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BashShop.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,26 @@ namespace BashShop.Pages
         public AboutUsPage()
         {
             InitializeComponent();
+            GetInfoReviews();
+        }
+
+        private void AddRevBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (DesRev.Text == " ")
+            {
+                MessageBox.Show("Введите все данные");
+            }
+            else
+            {
+                Reviews rev = new Reviews(DesRev.Text, App.user.Name);
+                Reviews.AddReview(rev);
+                GetInfoReviews();
+            }
+        }
+
+        public async Task GetInfoReviews()
+        {
+            ReviewsLV.ItemsSource = await Reviews.GetInfoReview();
         }
     }
 }

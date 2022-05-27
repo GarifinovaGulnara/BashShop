@@ -1,0 +1,15 @@
+﻿<Window x:Class="BashShop.Windows.DialogDelWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BashShop.Windows"
+        mc:Ignorable="d"
+        Title="DialogDelWindow" Height="250" Width="450">
+    <Grid>
+        <Button Style="{DynamicResource ButtonStyle}" Height="35" Content="Нет" Background="#BEA36E" FontSize="18" HorizontalAlignment="Left" Margin="284,137,0,0" VerticalAlignment="Top" Width="71"/>
+        <Button Style="{DynamicResource ButtonStyle}" Height="35" Content="Да" Background="#BEA36E" FontSize="18" HorizontalAlignment="Left" Margin="81,137,0,0" VerticalAlignment="Top" Width="72"/>
+        <Label Content="Удалить заказ?" FontSize="24" HorizontalAlignment="Center" Margin="0,47,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

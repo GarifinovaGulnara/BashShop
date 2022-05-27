@@ -1,4 +1,5 @@
 ﻿using BashShop.Data;
+using BashShop.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,11 @@ namespace BashShop.Pages
             SaveUpdateBtn.Visibility = Visibility.Hidden;
             FIOTB.Text = App.user.Surname + " " + App.user.Name + " " + App.user.Patronic;
             DataContext = App.user;
+            GetInfoOrderAsync();
+        }
+        public async Task GetInfoOrderAsync()
+        {
+            UsersLV.ItemsSource = await Orders.GetInfoOrder();
         }
 
         private void UpdateProfilBtn_Click(object sender, RoutedEventArgs e)
@@ -49,6 +55,15 @@ namespace BashShop.Pages
             App.user.Patronic = fio[2];
             Users.EditProfile();
 
+        }
+
+        private void UsersLV_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            DialogDelWindow dia = new DialogDelWindow();
+            if (dia.ShowDialog()==true)
+            {
+                var item = UsersLV.SelectedItem as Orders;
+            }
         }
     }
 }
