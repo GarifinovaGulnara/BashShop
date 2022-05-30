@@ -38,6 +38,7 @@ namespace BashShop.Pages
                 Reviews rev = new Reviews(DesRev.Text, App.user.Name);
                 Reviews.AddReview(rev);
                 GetInfoReviews();
+                DesRev.Text = "";
             }
         }
 

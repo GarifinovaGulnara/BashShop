@@ -36,5 +36,31 @@ namespace BashShop.Pages
             var lstp = listprod.SelectedItem as Products;
             this.NavigationService.Navigate(new OrderPage(lstp));
         }
+        public async Task GetSearchList()
+        {
+            listprod.ItemsSource = await Products.SearchList(SearchWord.Text);
+        }
+        public async Task GetSotringList()
+        {
+            listprod.ItemsSource = await Products.SortingList();
+        }
+        public async Task GetSotringListMinus()
+        {
+            listprod.ItemsSource = await Products.SortingLisrMinus();
+        }
+        private void SearchBtn_Click(object sender, RoutedEventArgs e)
+        {
+            GetSearchList();
+        }
+
+        private void Sort_Click(object sender, RoutedEventArgs e)
+        {
+            GetSotringList();
+        }
+
+        private void Sort_Copy_Click(object sender, RoutedEventArgs e)
+        {
+            GetSotringListMinus();
+        }
     }
 }

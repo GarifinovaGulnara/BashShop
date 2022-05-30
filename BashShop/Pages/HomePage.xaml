@@ -9,7 +9,7 @@
       Title="HomePage">
 
     <Grid Background="White">
-        <Image HorizontalAlignment="Left" Height="151" Margin="65,30,0,0" VerticalAlignment="Top" Width="174" Source="/img/profil.png"/>
+        <Image x:Name="UserImg" HorizontalAlignment="Left" Height="151" Margin="65,30,0,0" VerticalAlignment="Top" Width="174" Source="/img/profil.png" PreviewMouseDown="UserImg_PreviewMouseDown"/>
         <TextBox x:Name="FIOTB" Background="#F4E8D0" IsEnabled="False" HorizontalAlignment="Left" Margin="275,53,0,0" VerticalAlignment="Top" Width="170" Height="40"/>
         <TextBox x:Name="PhoneLB" Text="{Binding Phone}" Background="#F4E8D0" IsEnabled="False" HorizontalAlignment="Left" Margin="275,106,0,0" VerticalAlignment="Top" Width="150"/>
         <TextBox x:Name="PassLB" Text="{Binding Pass}" Background="#F4E8D0" IsEnabled="False" HorizontalAlignment="Left" Margin="275,140,0,0" VerticalAlignment="Top" Width="150"/>

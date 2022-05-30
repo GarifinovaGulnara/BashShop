@@ -24,7 +24,7 @@ namespace BashShop
     public partial class MainWindow : Window
     {
         public bool IsAdmin;
-        public MainWindow(bool id)
+        public MainWindow(bool id) 
         {
             InitializeComponent();
             IsAdmin = id;

@@ -28,8 +28,10 @@ namespace BashShop.Data
         [BsonElement]
         public string Pass { get; set; }
         [BsonElement]
+        public byte[] Photo { get; set; }
+        [BsonElement]
         public bool IsAdmin { get; set; }
-        public Users(string name, string surname, string patronic, string datebirth, string phone, string pass, bool isadmin = false)
+        public Users(string name, string surname, string patronic, string datebirth, string phone, string pass, byte[] photo, bool isadmin = false)
         {
             Name = name;
             Surname = surname;
@@ -38,6 +40,7 @@ namespace BashShop.Data
             Phone = phone;
             Pass = pass;
             IsAdmin = isadmin;
+            Photo = photo;
         }
 
         public Users(string phone, string pass)
@@ -69,21 +72,21 @@ namespace BashShop.Data
 
         public static void EditProfile()
         {
-            MongoClient client = new MongoClient(); // чтобы подключится к серверу надо передать в качестве аргумента {uri}
+            MongoClient client = new MongoClient();
             var db = client.GetDatabase("BashShop");
             var data = db.GetCollection<Users>("users");
             var UpdateDef = Builders<Users>.Update.Set("Name", App.user.Name).Set("Surname", App.user.Surname).Set("Patronic", App.user.Patronic).Set("Phone", App.user.Phone).Set("Pass", App.user.Pass);
             data.UpdateOne(basa => basa.Id == App.user.Id, UpdateDef);
-            //IGridFSBucket gridFS = new GridFSBucket(db);
+            
+        }
 
-            //try
-            //{
-            //    using (Stream fs = new FileStream(new_link, FileMode.Open))
-            //    {
-            //        await gridFS.UploadFromStreamAsync(textbox3.Text, fs, new GridFSUploadOptions { Metadata = new BsonDocument("filename", textbox3.Text) });
-            //    }
-            //}
-            //catch { }
+        public void Update()
+        {
+            MongoClient client = new MongoClient();
+            var db = client.GetDatabase("ReabilitionCenter");
+            var collection = db.GetCollection<Users>("users");
+            var UpdateDef = Builders<Users>.Update.Set("Photo", App.user.Photo);
+            collection.UpdateOne(basa => basa.Id == App.user.Id, UpdateDef);
         }
     }
 }

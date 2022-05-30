@@ -50,6 +50,9 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <ComboBox HorizontalAlignment="Left" Margin="455,50,0,0" VerticalAlignment="Top" Width="148" Height="36"/>
+        <TextBox x:Name="SearchWord" HorizontalAlignment="Left" Margin="421,27,0,0" Background="#F4E8D0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122" Height="32"/>
+        <Button Style="{DynamicResource ButtonStyle}" x:Name="SearchBtn" Height="32" Content="Искать" Background="#BEA36E" HorizontalAlignment="Left" Margin="566,27,0,0" VerticalAlignment="Top" Width="58" Click="SearchBtn_Click"/>
+        <RadioButton x:Name="Sort" Content="Сортировка по возрастанию цены" HorizontalAlignment="Left" Margin="421,85,0,0" VerticalAlignment="Top" Height="25" Width="219" Click="Sort_Click"/>
+        <RadioButton x:Name="Sort_Copy" Content="Сортировка по убыванию цены" HorizontalAlignment="Left" Margin="421,115,0,0" VerticalAlignment="Top" Height="25" Width="219" Click="Sort_Copy_Click"/>
     </Grid>
 </Page>

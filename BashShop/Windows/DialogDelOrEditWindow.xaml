@@ -8,7 +8,7 @@
         Title="DialogDelOrEditWindow" Height="250" Width="500">
     <Grid>
         <Button Style="{DynamicResource ButtonStyle}" x:Name="DeleteProd" Height="34" Content="Удалить" Background="#BEA36E" HorizontalAlignment="Left" VerticalAlignment="Center" Width="118" Margin="94,0,0,0" Click="DeleteProd_Click"/>
-        <Button Style="{DynamicResource ButtonStyle}" x:Name="EditProd" Height="34" Content="Редактировать" Background="#BEA36E" HorizontalAlignment="Left" VerticalAlignment="Center" Width="118" Margin="294,0,0,0"/>
+        <Button Style="{DynamicResource ButtonStyle}" x:Name="EditProd" Height="34" Content="Редактировать" Background="#BEA36E" HorizontalAlignment="Left" VerticalAlignment="Center" Width="118" Margin="294,0,0,0" Click="EditProd_Click"/>
 
     </Grid>
 </Window>

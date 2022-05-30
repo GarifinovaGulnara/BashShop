@@ -62,7 +62,7 @@ namespace BashShop.Windows
             }
             else
             {
-                Users us = new Users(NameTB.Text, SurnameTB.Text, PatronicTB.Text, DateBTB.Text, PhoneRegTB.Text, PassReg.Password);
+                Users us = new Users(NameTB.Text, SurnameTB.Text, PatronicTB.Text, DateBTB.Text, PhoneRegTB.Text, PassReg.Password, null);
                 Users.AddUser(us);
                 MessageBox.Show("Вы зарегистрировались!");
                 MainWindow mw = new MainWindow(us.IsAdmin);

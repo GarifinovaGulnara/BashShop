@@ -30,5 +30,13 @@ namespace BashShop.APages
         {
             AllOrdersLV.ItemsSource = await Orders.GetInfoAllOrders();
         }
+
+        private void AllOrdersLV_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var item = AllOrdersLV.SelectedItem as Orders;
+            Orders.DeleteOrder(item);
+            MessageBox.Show("Заказ удален");
+            GetInfoAllOrderAsynk();
+        }
     }
 }

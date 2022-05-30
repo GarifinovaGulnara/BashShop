@@ -9,7 +9,7 @@
       Title="AHomePage">
 
     <Grid Background="White">
-        <ListView x:Name="AllOrdersLV" Margin="32,100,32,100">
+        <ListView x:Name="AllOrdersLV" SelectionChanged="AllOrdersLV_SelectionChanged"  Margin="32,100,32,100">
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding NameProd}" Header="Название"/>

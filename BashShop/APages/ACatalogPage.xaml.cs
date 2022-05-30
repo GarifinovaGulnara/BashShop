@@ -1,19 +1,8 @@
 ﻿using BashShop.Data;
 using BashShop.Windows;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace BashShop.APages
 {
@@ -44,6 +33,33 @@ namespace BashShop.APages
             var lstp = listprod.SelectedItem as Products;
             DialogDelOrEditWindow ddoew = new DialogDelOrEditWindow(lstp);
             ddoew.Show();
+        }
+
+        public async Task GetSearchList()
+        {
+            listprod.ItemsSource = await Products.SearchList(SearchWord.Text);
+        }
+        public async Task GetSotringList()
+        {
+            listprod.ItemsSource = await Products.SortingList();
+        }
+        public async Task GetSotringListMinus()
+        {
+            listprod.ItemsSource = await Products.SortingLisrMinus();
+        }
+        private void SearchBtn_Click(object sender, RoutedEventArgs e)
+        {
+            GetSearchList();
+        }
+
+        private void Sort_Click(object sender, RoutedEventArgs e)
+        {
+            GetSotringList();
+        }
+
+        private void Sort_Copy_Click(object sender, RoutedEventArgs e)
+        {
+            GetSotringListMinus();
         }
     }
 }

@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="DialogDelWindow" Height="250" Width="450">
     <Grid>
-        <Button Style="{DynamicResource ButtonStyle}" Height="35" Content="Нет" Background="#BEA36E" FontSize="18" HorizontalAlignment="Left" Margin="284,137,0,0" VerticalAlignment="Top" Width="71"/>
-        <Button Style="{DynamicResource ButtonStyle}" Height="35" Content="Да" Background="#BEA36E" FontSize="18" HorizontalAlignment="Left" Margin="81,137,0,0" VerticalAlignment="Top" Width="72"/>
+        <Button Style="{DynamicResource ButtonStyle}" Height="35" Content="Нет" Background="#BEA36E" FontSize="18" HorizontalAlignment="Left" Margin="284,137,0,0" VerticalAlignment="Top" Width="71" Click="Button_Click_1"/>
+        <Button Style="{DynamicResource ButtonStyle}" Height="35" Content="Да" Background="#BEA36E" FontSize="18" HorizontalAlignment="Left" Margin="81,137,0,0" VerticalAlignment="Top" Width="72" Click="Button_Click"/>
         <Label Content="Удалить заказ?" FontSize="24" HorizontalAlignment="Center" Margin="0,47,0,0" VerticalAlignment="Top"/>
 
     </Grid>

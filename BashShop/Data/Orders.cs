@@ -56,16 +56,15 @@ namespace BashShop.Data
             MongoClient client = new MongoClient();
             var db = client.GetDatabase("BashShop");
             var collection = db.GetCollection<Orders>("orders");
-            return collection.Find(x => x.Count != 0).ToList();
-            //return collection.Find(x => x.PhoneUser == App.user.Phone).ToList();
+            return collection.Find(x => true).ToList();
         }
 
-        public static void DeleteOrder()
+        public static void DeleteOrder(Orders order)
         {
             MongoClient client = new MongoClient();
             var db = client.GetDatabase("BashShop");
             var collection = db.GetCollection<Orders>("orders");
-
+            collection.DeleteOne(x=>x.id == order.id);
         }
     }
 }

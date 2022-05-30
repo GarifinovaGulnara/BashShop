@@ -1,4 +1,5 @@
-﻿using BashShop.Data;
+﻿using BashShop.APages;
+using BashShop.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,7 +30,15 @@ namespace BashShop.Windows
 
         private void DeleteProd_Click(object sender, RoutedEventArgs e)
         {
+            Products.DeleteProd(products);
+            MessageBox.Show("Товар удален");
+            this.Close();
+        }
 
+        private void EditProd_Click(object sender, RoutedEventArgs e)
+        {
+            EditWindow apw = new EditWindow(products);
+            apw.Show();
         }
     }
 }

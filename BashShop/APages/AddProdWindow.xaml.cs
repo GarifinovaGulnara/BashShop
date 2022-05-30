@@ -36,6 +36,10 @@ namespace BashShop.APages
                 Products pr = new Products(NameProd.Text, DesProd.Text, Convert.ToDouble(PriceProd.Text));
                 Products.AddProd(pr);
                 MessageBox.Show("Товар добавлен");
+                NameProd.Text = "";
+                DesProd.Text = "";
+                PriceProd.Text = "";
+
             }
         }
     }
