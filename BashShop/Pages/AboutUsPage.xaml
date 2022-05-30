@@ -9,22 +9,22 @@
       Title="AboutUsPage">
 
     <Grid Background="White">
-        <Image HorizontalAlignment="Left" Height="265" Margin="0,15,0,0" VerticalAlignment="Top" Width="300" Source="/img/logo.jpg"/>
-        <TextBox IsEnabled="False" Text="У нас вы найдете самогонные аппараты, пивоварни, комплектующие и ингредиенты — все необходимое для приготовления вкусных натуральных продуктов и напитков. На прилавки поступают только качественные товары.
+        <Image HorizontalAlignment="Left" Height="243" Margin="0,15,0,0" VerticalAlignment="Top" Width="300" Source="/img/logo.jpg"/>
+        <TextBox IsEnabled="False" Text="У нас вы найдете все необходимые товары для приготовления вкусных натуральных продуктов и напитков. На прилавки поступают только качественные товары.
 
-Главное, чего мы хотим добиться — показать людям, что приготовление домашних напитков является увлекательным хобби. Если вы хотите пить вкусные напитки без примесей и употреблять в пищу натуральные продукты без консервантов и усилителей, присоединяйтесь к нам! С нами это легче, чем кажется!" Background="#F4E8D0" Padding="10" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="305,15,0,0" VerticalAlignment="Top" Height="225" Width="311"/>
-        <ListView x:Name="ReviewsLV" Height="150" Margin="0,260,0,140">
+Главное, чего мы хотим добиться — показать людям, что приготовление домашних напитков является увлекательным хобби. Если вы хотите пить вкусные напитки без примесей и употреблять в пищу натуральные продукты без консервантов и усилителей, присоединяйтесь к нам! С нами это легче, чем кажется!" Background="#F4E8D0" Padding="10" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="305,15,0,0" VerticalAlignment="Top" Height="203" Width="311"/>
+        <ListView x:Name="ReviewsLV" Margin="0,245,0,140">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Border Background="White" CornerRadius="10" Margin="10,0,0,10">
                         <Border.Effect>
                             <DropShadowEffect BlurRadius="30" Color="LightGray" />
                         </Border.Effect>
-                        <Canvas Height="50" Width="350" HorizontalAlignment="Center">
+                        <Canvas Height="50" Width="550" HorizontalAlignment="Center">
                             <TextBlock 
                                 Text="{Binding NameUs}" 
                                 FontWeight="Bold" 
-                                FontSize="15" 
+                                FontSize="12" 
                                 Margin="5"
                                 Width="300"
                                 TextAlignment="Left" 
@@ -32,9 +32,9 @@
                             <TextBlock
                                 Text="{Binding Review}" 
                                 FontSize="10" 
-                                Margin="10,30"
-                                Width="300"
-                                Height="200"
+                                Margin="10,20"
+                                Width="500"
+                                Height="300"
                                 TextAlignment="Left" 
                                 TextWrapping="Wrap"
                                 Background="Transparent"/>

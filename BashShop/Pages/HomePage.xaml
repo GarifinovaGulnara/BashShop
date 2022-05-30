@@ -14,7 +14,7 @@
         <TextBox x:Name="PhoneLB" Text="{Binding Phone}" Background="#F4E8D0" IsEnabled="False" HorizontalAlignment="Left" Margin="275,106,0,0" VerticalAlignment="Top" Width="150"/>
         <TextBox x:Name="PassLB" Text="{Binding Pass}" Background="#F4E8D0" IsEnabled="False" HorizontalAlignment="Left" Margin="275,140,0,0" VerticalAlignment="Top" Width="150"/>
         <Button x:Name="UpdateProfilBtn" Style="{DynamicResource ButtonStyle}" Background="#BEA36E" Content="Редактировать профиль" Padding="10" HorizontalAlignment="Left" Margin="75,206,0,0" VerticalAlignment="Top" Click="UpdateProfilBtn_Click"/>
-        <ListView x:Name="UsersLV" Width="300" Height="250" Margin="275,275,75,25" SelectionChanged="UsersLV_SelectionChanged">
+        <ListView x:Name="UsersLV" Height="250" Margin="182,275,75,25" SelectionChanged="UsersLV_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding NameProd}" Header="Название"/>
