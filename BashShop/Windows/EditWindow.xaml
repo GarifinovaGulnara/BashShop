@@ -8,11 +8,11 @@
         Title="EditWindow" Height="350" Width="550">
     <Grid>
         <Button Style="{DynamicResource ButtonStyle}" x:Name="EdirProd" Height="35" Content="Сохранить изменения" Background="#BEA36E" HorizontalAlignment="Left" Margin="355,250,0,0" VerticalAlignment="Top" Width="130" Click="EdirProd_Click" />
-        <TextBox x:Name="NameProd" Background="#F4E8D0" HorizontalAlignment="Left" Margin="59,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143" Height="38"/>
+        <TextBox x:Name="EditNameProd" Background="#F4E8D0" HorizontalAlignment="Left" Margin="59,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143" Height="38"/>
         <Label Content="Название" FontWeight="Bold" HorizontalAlignment="Left" Margin="58,30,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="DesProd" Background="#F4E8D0" HorizontalAlignment="Left" Margin="302,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" Height="121"/>
+        <TextBox x:Name="EditDesProd" Background="#F4E8D0" HorizontalAlignment="Left" Margin="302,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" Height="121"/>
         <Label Content="Описание" FontWeight="Bold" HorizontalAlignment="Left" Margin="301,30,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="PriceProd" Background="#F4E8D0" HorizontalAlignment="Left" Margin="60,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143" Height="38"/>
+        <TextBox x:Name="EditPriceProd" Background="#F4E8D0" HorizontalAlignment="Left" Margin="60,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143" Height="38"/>
         <Label Content="Цена" FontWeight="Bold" HorizontalAlignment="Left" Margin="59,107,0,0" VerticalAlignment="Top"/>
 
     </Grid>

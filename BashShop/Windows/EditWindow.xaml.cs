@@ -1,17 +1,6 @@
 ﻿using BashShop.Data;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace BashShop.Windows
 {
@@ -20,21 +9,20 @@ namespace BashShop.Windows
     /// </summary>
     public partial class EditWindow : Window
     {
-        Products products;
         public EditWindow(Products prod)
         {
             InitializeComponent();
-            products = prod;
-            NameProd.Text = prod.Name;
-            PriceProd.Text = prod.Price.ToString();
-            DesProd.Text = prod.Description;
+            App.products = prod;
+            EditNameProd.Text = prod.Name;
+            EditPriceProd.Text = prod.Price.ToString();
+            EditDesProd.Text = prod.Description;
         }
 
         private void EdirProd_Click(object sender, RoutedEventArgs e)
         {
-            App.products.Name = NameProd.Text;
-            App.products.Price = Convert.ToInt32(PriceProd.Text);
-            App.products.Description = DesProd.Text;
+            App.products.Name = EditNameProd.Text.ToString();
+            App.products.Price = Convert.ToInt32(EditPriceProd.Text);
+            App.products.Description = EditDesProd.Text.ToString();
             Products.EditProd();
         }
     }
